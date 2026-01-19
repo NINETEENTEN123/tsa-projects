@@ -7,7 +7,7 @@ import random
 async def main():
     pygame.init()
     screen = pygame.display.set_mode((800, 600))
-    pygame.display.set_caption("Async Game Loop Example")
+    pygame.display.set_caption("Game")
 
     clock = pygame.time.Clock()
     running = True
@@ -32,6 +32,7 @@ async def main():
 
         screen.fill((0, 0, 0))
         pygame.draw.rect(screen, (255, 0, 0), (*player_pos, 50, 50))
+        pygame.draw.circle(screen, (0, 255, 0), (random.randint(0, 800), random.randint(0, 600)), 25)
         pygame.display.flip()
 
         await asyncio.sleep(0)  # Yield control to the event loop
